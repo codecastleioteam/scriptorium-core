@@ -7,9 +7,11 @@ package net.dougvalenta.scriptorium;
 import java.io.IOException;
 
 /**
+ * An interface for escaping characters being output to an {@link Appendable}.
  * 
  * @author Doug Valenta
  */
+@FunctionalInterface
 public interface Escaper {
 	
 	/**
@@ -18,8 +20,7 @@ public interface Escaper {
 	 * 
 	 * @param character the character to escape or append
 	 * @param appendable the appendable to append the character or its escape sequence to
-	 * @throws IOException if an exception occurs while appending to the underlying
-	 * {@link Appendable}
+	 * @throws IOException if an I/O error occurs
 	 */
 	public void escape(char character, Appendable appendable) throws IOException;
 	
