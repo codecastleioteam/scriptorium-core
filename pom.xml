@@ -30,6 +30,7 @@
 				<version>${javadoc.plugin.version}</version>
 				<configuration>
 					<reportOutputDirectory>${basedir}/docs</reportOutputDirectory>
+					<notimestamp>true</notimestamp>
 				</configuration>
 			</plugin>
 		</plugins>
