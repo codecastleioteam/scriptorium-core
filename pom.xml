@@ -1,38 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<groupId>net.dougvalenta.scriptorium</groupId>
 	<artifactId>scriptorium-core</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
+	
+	<name>Scriptorium Core</name>
+	<description>Fluent Java API for writing JSON output</description>
+	<url>https://github.com/dougvalenta/scriptorium-core</url>
+	
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+	
+	<developers>
+		<developer>
+			<name>Doug Valenta</name>
+			<email>dougvalenta@gmail.com</email>
+			<organizationUrl>https://github.com/dougvalenta</organizationUrl>
+		</developer>
+	</developers>
+	
+	<scm>
+		<connection>scm:git:git://github.com/dougvalenta/scriptorium-core.git</connection>
+		<developerConnection>scm:git:ssh://github.com:dougvalenta/scriptorium-core.git</developerConnection>
+		<url>http://github.com/dougvalenta/scriptorium-core</url>
+	</scm>
+	
 	<properties>
+		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<!-- Test Dependency Versions -->
+		
+		<!-- Test dependency versions -->
 		<junit.version>4.12</junit.version>
-		<!-- Build Plugin Versions -->
+		<mockito.version>2.15.0</mockito.version>
+		
+		<!-- Build plugin versions -->
 		<javadoc.plugin.version>3.0.0</javadoc.plugin.version>
+		<jacoco.plugin.version>0.8.0</jacoco.plugin.version>
+		<pitest.plugin.version>1.3.2</pitest.plugin.version>
+		
 	</properties>
-	<name>Scriptorium Core</name>
+	
 	<dependencies>
+		
+		<!-- Test dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
+			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
 	</dependencies>
+	
 	<build>
 		<plugins>
+			
+			<!-- Build artifacts and documentation -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>${javadoc.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>javadoc-jar</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
-					<reportOutputDirectory>${basedir}/docs</reportOutputDirectory>
 					<notimestamp>true</notimestamp>
 				</configuration>
 			</plugin>
+			
+			<!-- Testing -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>jacoco-prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-report</id>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
+				<version>${pitest.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>pitest</id>
+						<goals>
+							<goal>mutationCoverage</goal>
+						</goals>
+						<phase>test</phase>
+					</execution>
+				</executions>
+			</plugin>
+			
 		</plugins>
 	</build>
+	
 </project>

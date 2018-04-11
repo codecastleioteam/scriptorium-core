@@ -8,12 +8,11 @@ import java.io.Closeable;
 import java.io.IOException;
 
 /**
- * A fluent primitive for nested fluent interfaces.
+ * A primitive for nested fluent interfaces.
  * 
  * <p>
- * Intended to support fluent interfaces that return FluentNode objects that are parameterized
- * with the returning type, and return the returning object when their {@link FluentNode#then()}
- * method is called.
+ * The {@link #then()} method calls the {@link #close()} method and returns a parent
+ * object.
  * 
  * @author Doug Valenta
  * @param <P> the parent type 
@@ -21,15 +20,20 @@ import java.io.IOException;
 public interface FluentNode<P> extends Closeable {
 	
 	/**
-	 * Returns this nodes parent.
-	 * 
-	 * <p>
-	 * Implementers may output the closure of a nested structure before returning.
+	 * Closes this node and returns its parent.
 	 * 
 	 * @return this node's parent
-	 * @throws IOException if there is an exception while outputting the closure of a
-	 * nested structure
+	 * @throws IOException if an I/O error occurs
+	 * @see #close()
 	 */
 	public P then() throws IOException;
+	
+	/**
+	 * Closes this node, and any child nodes that remain open.
+	 * 
+	 * @throws IOException if an I/O error occurs
+	 */
+	@Override
+	public void close() throws IOException;
 	
 }

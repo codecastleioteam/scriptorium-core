@@ -7,7 +7,7 @@ package net.dougvalenta.scriptorium;
 import java.io.IOException;
 
 /**
- * An interface for escaping characters being output to an {@link Appendable}.
+ * Escapes characters being output to an {@link Appendable}.
  * 
  * @author Doug Valenta
  */
@@ -15,7 +15,7 @@ import java.io.IOException;
 public interface Escaper {
 	
 	/**
-	 * Appends the provided character or its escape sequence to the provided
+	 * Outputs the provided character or its escape sequence to the provided
 	 * {@link Appendable}.
 	 * 
 	 * @param character the character to escape or append
