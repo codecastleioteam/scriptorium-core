@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * A wrapper class for outputting whitespace characters to an {@link Appendable}.
+ * Outputs whitespace characters to an {@link Appendable}.
  * 
  * @author Doug Valenta
  */
