@@ -46,7 +46,7 @@ public class Whitespace {
 	 * 
 	 * @return this object
 	 * @throws IOException if an I/O error occurs 
-	 * @see spaces(int)
+	 * @see #spaces(int)
 	 */
 	public Whitespace space() throws IOException {
 		appendable.append(SPACE);
@@ -59,7 +59,7 @@ public class Whitespace {
 	 * @param count the number of space characters to output
 	 * @return this object
 	 * @throws IOException if an I/O error occurs 
-	 * @see space()
+	 * @see #space()
 	 */
 	public Whitespace spaces(final int count) throws IOException {
 		if (count > 0) {

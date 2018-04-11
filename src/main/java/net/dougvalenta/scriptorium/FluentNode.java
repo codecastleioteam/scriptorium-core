@@ -31,6 +31,10 @@ public interface FluentNode<P> extends Closeable {
 	/**
 	 * Closes this node, and any child nodes that remain open.
 	 * 
+	 * <p>
+	 * Subsequent calls to this method after the first on the same object should have no
+	 * effect.
+	 * 
 	 * @throws IOException if an I/O error occurs
 	 */
 	@Override
