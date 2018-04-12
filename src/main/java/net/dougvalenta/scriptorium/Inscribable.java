@@ -146,6 +146,7 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * @param biConsumer the {@link IOBiConsumer} to call with an instance of the inscribed type
 	 * @return this object
 	 * @throws IOException if an I/O error occurs 
+	 * @throws NullPointerException if {@code optionalElement} is null
 	 */
 	public default <T> THIS withIfPresent(final Optional<? extends T> optionalElement, final IOBiConsumer<? super T, ? super I> biConsumer) throws IOException {
 		if (optionalElement.isPresent()) return with(optionalElement.get(), biConsumer);
@@ -163,6 +164,9 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * <p>
 	 * The default implementation iterates over the provided elements, delegating to
 	 * {@link #with(Object, IOBiConsumer)} on each iteration.
+	 * 
+	 * <p>
+	 * If the provided array is empty or null, this method has no effect.
 	 * 
 	 * @param <T> the type of the elements
 	 * @param elements the elements to pass as the first argument of the provided bi-consumer
@@ -190,6 +194,9 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * <p>
 	 * The default implementation iterates over the provided elements, delegating to
 	 * {@link #with(Object, IOBiConsumer)} on each iteration.
+	 * 
+	 * <p>
+	 * If the provided iterable is empty or null, this method has no effect.
 	 * 
 	 * @param <T> the type of the elements
 	 * @param elements the elements to pass as the first argument of the provided bi-consumer
