@@ -78,7 +78,7 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * @throws IOException if an I/O error occurs 
 	 * @see #withIfNotNull(Object, IOBiConsumer)
 	 * @see #withIfPresent(Optional, IOBiConsumer)
-	 * @see #withEach(Object[] IOBiConsumer)
+	 * @see #withEach(Object[], IOBiConsumer)
 	 * @see #withEach(Iterable, IOBiConsumer)
 	 */
 	public <T> THIS with(T element, IOBiConsumer<? super T, ? super I> biConsumer) throws IOException;
