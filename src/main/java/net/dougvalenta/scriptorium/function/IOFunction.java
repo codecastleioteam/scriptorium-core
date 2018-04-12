@@ -11,7 +11,7 @@ import java.io.IOException;
  * throwing an {@link java.io.IOException}.
  * 
  * <p>
- * This is a functional interface whose functional method is {@link apply(Object)}
+ * This is a functional interface whose functional method is {@link #apply(Object)}
  * 
  * @author Doug Valenta
  * @param <T> the type of the input to the function

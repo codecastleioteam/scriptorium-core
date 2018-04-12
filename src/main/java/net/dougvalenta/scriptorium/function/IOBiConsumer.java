@@ -13,7 +13,7 @@ import java.io.IOException;
  * This is the two-arity specialization of {@link IOConsumer}.
  * 
  * <p>
- * This is a functional interface whose functional method is {@link accept(Object, Object)}.
+ * This is a functional interface whose functional method is {@link #accept(Object, Object)}.
  * 
  * @author Doug Valenta
  * @param <T> the type of the first argument to the operation
