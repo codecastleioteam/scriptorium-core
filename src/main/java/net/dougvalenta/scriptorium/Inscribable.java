@@ -59,6 +59,7 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * @param consumer the {@link IOConsumer} to call with an instance of the inscribed type
 	 * @return this object
 	 * @throws IOException if an I/O error occurs 
+	 * @see #withIf(boolean, IOConsumer)
 	 */
 	public THIS with(IOConsumer<? super I> consumer) throws IOException;
 	
@@ -75,6 +76,10 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * @param biConsumer the {@link IOBiConsumer} to call with an instance of the inscribed type
 	 * @return this object
 	 * @throws IOException if an I/O error occurs 
+	 * @see #withIfNotNull(Object, IOBiConsumer)
+	 * @see #withIfPresent(Optional, IOBiConsumer)
+	 * @see #withEach(Object[] IOBiConsumer)
+	 * @see #withEach(Iterable, IOBiConsumer)
 	 */
 	public <T> THIS with(T element, IOBiConsumer<? super T, ? super I> biConsumer) throws IOException;
 	
@@ -95,6 +100,8 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * @param consumer the {@link IOConsumer} to call with an instance of the inscribed type
 	 * @return this object
 	 * @throws IOException if an I/O error occurs 
+	 * @see #withIfNotNull(Object, IOBiConsumer)
+	 * @see #withIfPresent(Optional, IOBiConsumer)
 	 */
 	public default THIS withIf(final boolean condition, final IOConsumer<? super I> consumer) throws IOException {
 		if (condition) return with(consumer);
@@ -120,6 +127,9 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * @param biConsumer the {@link IOBiConsumer} to call with an instance of the inscribed type
 	 * @return this object
 	 * @throws IOException if an I/O error occurs 
+	 * @see #with(Object, IOBiConsumer)
+	 * @see #withIfPresent(Optional, IOBiConsumer)
+	 * @see #withIf(boolean, IOConsumer)
 	 */
 	public default <T> THIS withIfNotNull(final T element, final IOBiConsumer<? super T, ? super I> biConsumer) throws IOException {
 		if (element != null) return with(element, biConsumer);
@@ -147,6 +157,9 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * @return this object
 	 * @throws IOException if an I/O error occurs 
 	 * @throws NullPointerException if {@code optionalElement} is null
+	 * @see #with(Object, IOBiConsumer)
+	 * @see #withIfNotNull(Object, IOBiConsumer)
+	 * @see #withIf(boolean, IOConsumer)
 	 */
 	public default <T> THIS withIfPresent(final Optional<? extends T> optionalElement, final IOBiConsumer<? super T, ? super I> biConsumer) throws IOException {
 		if (optionalElement.isPresent()) return with(optionalElement.get(), biConsumer);
@@ -173,6 +186,7 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * @param biConsumer the {@link IOBiConsumer} to call with an instance of the inscribed type
 	 * @return this object
 	 * @throws IOException if an I/O error occurs 
+	 * @see #withEach(Iterable, IOBiConsumer)
 	 */
 	public default <T> THIS withEach(final T[] elements, final IOBiConsumer<? super T, ? super I> biConsumer) throws IOException {
 		if (elements != null) {
@@ -203,6 +217,7 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * @param biConsumer the {@link IOBiConsumer} to call with an instance of the inscribed type
 	 * @return this object
 	 * @throws IOException if an I/O error occurs 
+	 * @see #withEach(Object[], IOBiConsumer)
 	 */
 	public default <T> THIS withEach(final Iterable<? extends T> elements, final IOBiConsumer<? super T, ? super I> biConsumer) throws IOException {
 		if (elements != null) {
