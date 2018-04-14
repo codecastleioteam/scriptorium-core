@@ -2,7 +2,7 @@
  * Copyright 2018 Doug Valenta.
  * Licensed under the terms of the MIT License.
  */
-package io.codecastle.scriptorium;
+package io.codecastle.scriptorium.scribe;
 
 import java.io.IOException;
 

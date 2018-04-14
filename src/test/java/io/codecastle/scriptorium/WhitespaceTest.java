@@ -4,6 +4,7 @@
  */
 package io.codecastle.scriptorium;
 
+import io.codecastle.scriptorium.scribe.Whitespace;
 import java.io.IOException;
 import java.util.Arrays;
 import org.junit.Assert;

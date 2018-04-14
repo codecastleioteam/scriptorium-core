@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 	
 	<name>Scriptorium Core</name>
-	<description>Fluent Java API for writing JSON output</description>
+	<description>Common interfaces and classes for Scriptorium libraries</description>
 	<url>https://github.com/dougvalenta/scriptorium-core</url>
 	
 	<licenses>
