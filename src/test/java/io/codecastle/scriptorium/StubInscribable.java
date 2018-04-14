@@ -2,12 +2,12 @@
  * Copyright 2018 Doug Valenta.
  * Licensed under the terms of the MIT License.
  */
-package net.dougvalenta.scriptorium;
+package io.codecastle.scriptorium;
 
 import java.io.IOException;
-import net.dougvalenta.scriptorium.function.IOBiConsumer;
-import net.dougvalenta.scriptorium.function.IOConsumer;
-import net.dougvalenta.scriptorium.function.IOFunction;
+import io.codecastle.scriptorium.function.IOBiConsumer;
+import io.codecastle.scriptorium.function.IOConsumer;
+import io.codecastle.scriptorium.function.IOFunction;
 
 /**
  *

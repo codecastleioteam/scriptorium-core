@@ -2,7 +2,7 @@
  * Copyright 2018 Doug Valenta.
  * Licensed under the terms of the MIT License.
  */
-package net.dougvalenta.scriptorium;
+package io.codecastle.scriptorium;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,8 +10,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import net.dougvalenta.scriptorium.function.IOBiConsumer;
-import net.dougvalenta.scriptorium.function.IOConsumer;
+import io.codecastle.scriptorium.function.IOBiConsumer;
+import io.codecastle.scriptorium.function.IOConsumer;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.InOrder;

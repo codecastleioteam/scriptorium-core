@@ -2,7 +2,7 @@
  * Copyright 2018 Doug Valenta.
  * Licensed under the terms of the MIT License.
  */
-package net.dougvalenta.scriptorium;
+package io.codecastle.scriptorium;
 
 import java.io.IOException;
 import java.util.Arrays;
