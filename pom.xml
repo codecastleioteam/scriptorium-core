@@ -42,9 +42,6 @@
 		<junit.version>4.12</junit.version>
 		<mockito.version>2.15.0</mockito.version>
 		
-		<!-- Build plugin versions -->
-		<javadoc.plugin.version>3.0.0</javadoc.plugin.version>
-		
 	</properties>
 	
 	<dependencies>
@@ -64,19 +61,6 @@
 		</dependency>
 		
 	</dependencies>
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${javadoc.plugin.version}</version>
-				<configuration>
-					<notimestamp>true</notimestamp>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 	
 	<profiles>
 		
@@ -138,13 +122,16 @@
 				</property>
 			</activation>
 			<properties>
+				<javadoc.plugin.version>3.0.0</javadoc.plugin.version>
 				<source.plugin.version>3.0.1</source.plugin.version>
+				<gpg.plugin.version>1.6</gpg.plugin.version>
 			</properties>
 			<build>
 				<plugins>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>${javadoc.plugin.version}</version>
 						<executions>
 							<execution>
 								<id>attach-javadoc</id>
@@ -163,6 +150,19 @@
 								<id>attach-source</id>
 								<goals>
 									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${gpg.plugin.version}</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<goals>
+									<goal>sign</goal>
 								</goals>
 							</execution>
 						</executions>
