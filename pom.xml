@@ -9,7 +9,7 @@
 	
 	<name>Scriptorium Core</name>
 	<description>Common interfaces and classes for Scriptorium libraries</description>
-	<url>https://github.com/dougvalenta/scriptorium-core</url>
+	<url>https://github.com/codecastleioteam/scriptorium-core</url>
 	
 	<licenses>
 		<license>
@@ -27,9 +27,9 @@
 	</developers>
 	
 	<scm>
-		<connection>scm:git:git://github.com/dougvalenta/scriptorium-core.git</connection>
-		<developerConnection>scm:git:ssh://github.com:dougvalenta/scriptorium-core.git</developerConnection>
-		<url>http://github.com/dougvalenta/scriptorium-core</url>
+		<connection>scm:git:git://github.com/codecastleioteam/scriptorium-core.git</connection>
+		<developerConnection>scm:git:ssh://github.com:codecastleioteam/scriptorium-core.git</developerConnection>
+		<url>http://github.com/codecastleioteam/scriptorium-core</url>
 	</scm>
 	
 	<properties>

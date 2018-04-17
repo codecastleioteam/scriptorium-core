@@ -6,4 +6,4 @@ text formats (e.g., JSON, XML, YAML, HTML). The goal of this Core library is to
 provide a solid foundation for developing format-specific libraries, and to allow
 interoperation between these libraries for polyglot output.
 
-[JavaDoc](https://dougvalenta.github.io/scriptorium-core/apidocs/1.0)
+[JavaDoc](https://scriptorium.codecastle.io/apidocs/scriptorium-core/1.0)
