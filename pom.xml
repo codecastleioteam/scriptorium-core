@@ -42,6 +42,9 @@
 		<junit.version>4.12</junit.version>
 		<mockito.version>2.15.0</mockito.version>
 		
+		<!-- Build plugin versions -->
+		<jar.plugin.version>3.1.0</jar.plugin.version>
+		
 	</properties>
 	
 	<dependencies>
@@ -67,7 +70,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.1.0</version>
+				<version>${jar.plugin.version}</version>
 				<configuration>
 					<archive>
 						<manifestEntries>
