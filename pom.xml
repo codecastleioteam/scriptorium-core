@@ -43,9 +43,9 @@
 		<!-- Test dependency versions -->
 		<junit.version>5.3.2</junit.version>
 		<mockito.version>2.23.4</mockito.version>
-
+		
 		<!-- Build plugin versions -->
-		<jar.plugin.version>3.1.0</jar.plugin.version>
+		<compiler.plugin.version>3.8.0</compiler.plugin.version>
 
 	</properties>
 
@@ -72,7 +72,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
+				<version>${compiler.plugin.version}</version>
 			</plugin>
 		</plugins>
 	</build>
