@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Doug Valenta.
+ * Copyright 2018-2019 Doug Valenta.
  * Licensed under the terms of the MIT License.
  */
 package io.codecastle.scriptorium;
@@ -7,8 +7,8 @@ package io.codecastle.scriptorium;
 import io.codecastle.scriptorium.scribe.Whitespace;
 import java.io.IOException;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -57,8 +57,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.space();
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(" ", builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(" ", builder.toString());
 	}
 	
 	@Test
@@ -66,16 +66,16 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		Whitespace result = whitespace.spaces(16);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(SPACES_16, builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(SPACES_16, builder.toString());
 		builder.setLength(0);
 		result = whitespace.spaces(256);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(SPACES_256, builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(SPACES_256, builder.toString());
 		builder.setLength(0);
 		result = whitespace.spaces(700);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(SPACES_700, builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(SPACES_700, builder.toString());
 	}
 	
 	@Test
@@ -83,8 +83,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.spaces(0);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(0, builder.length());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(0, builder.length());
 	}
 	
 	@Test
@@ -92,8 +92,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.spaces(1);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(" ", builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(" ", builder.toString());
 	}
 	
 	@Test
@@ -101,8 +101,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.spaces(-99);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(0, builder.length());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(0, builder.length());
 	}
 	
 	@Test
@@ -110,8 +110,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.tab();
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals("\t", builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals("\t", builder.toString());
 	}
 	
 	@Test
@@ -119,19 +119,19 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		Whitespace result = whitespace.tabs(16);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(16, builder.length());
-		Assert.assertEquals(TABS_16, builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(16, builder.length());
+		Assertions.assertEquals(TABS_16, builder.toString());
 		builder.setLength(0);
 		result = whitespace.tabs(256);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(256, builder.length());
-		Assert.assertEquals(TABS_256, builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(256, builder.length());
+		Assertions.assertEquals(TABS_256, builder.toString());
 		builder.setLength(0);
 		result = whitespace.tabs(700);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(700, builder.length());
-		Assert.assertEquals(TABS_700, builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(700, builder.length());
+		Assertions.assertEquals(TABS_700, builder.toString());
 	}
 	
 	@Test
@@ -139,8 +139,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.tabs(0);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(0, builder.length());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(0, builder.length());
 	}
 	
 	@Test
@@ -148,8 +148,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.tabs(1);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals("\t", builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals("\t", builder.toString());
 	}
 	
 	@Test
@@ -157,8 +157,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.tabs(-99);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(0, builder.length());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(0, builder.length());
 	}
 	
 	@Test
@@ -166,8 +166,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.newline();
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals("\n", builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals("\n", builder.toString());
 	}
 	
 	@Test
@@ -175,19 +175,19 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		Whitespace result = whitespace.newlines(16);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(16, builder.length());
-		Assert.assertEquals(NEWLINES_16, builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(16, builder.length());
+		Assertions.assertEquals(NEWLINES_16, builder.toString());
 		builder.setLength(0);
 		result = whitespace.newlines(256);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(256, builder.length());
-		Assert.assertEquals(NEWLINES_256, builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(256, builder.length());
+		Assertions.assertEquals(NEWLINES_256, builder.toString());
 		builder.setLength(0);
 		result = whitespace.newlines(700);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(700, builder.length());
-		Assert.assertEquals(NEWLINES_700, builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(700, builder.length());
+		Assertions.assertEquals(NEWLINES_700, builder.toString());
 	}
 	
 	@Test
@@ -195,8 +195,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.newlines(0);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(0, builder.length());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(0, builder.length());
 	}
 	
 	@Test
@@ -204,8 +204,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.newlines(1);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals("\n", builder.toString());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals("\n", builder.toString());
 	}
 	
 	@Test
@@ -213,8 +213,8 @@ public class WhitespaceTest {
 		final StringBuilder builder = new StringBuilder();
 		final Whitespace whitespace = new Whitespace(builder);
 		final Whitespace result = whitespace.newlines(-99);
-		Assert.assertEquals(whitespace, result);
-		Assert.assertEquals(0, builder.length());
+		Assertions.assertEquals(whitespace, result);
+		Assertions.assertEquals(0, builder.length());
 	}
 	
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Doug Valenta.
+ * Copyright 2018-2019 Doug Valenta.
  * Licensed under the terms of the MIT License.
  */
 package io.codecastle.scriptorium;
