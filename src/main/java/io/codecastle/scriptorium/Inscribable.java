@@ -46,7 +46,7 @@ public interface Inscribable<I, THIS extends Inscribable<I, THIS>> {
 	 * argument
 	 * @throws IOException if an I/O error occurs 
 	 */
-	public <T extends FluentNode<THIS>> T inscribe(IOFunction<? super THIS, T> function) throws IOException;
+	public <T extends Inscription<THIS>> T inscribe(IOFunction<? super THIS, T> function) throws IOException;
 	
 	/**
 	 * Calls the provided {@link IOConsumer}, passing an instance of the inscribed

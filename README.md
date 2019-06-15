@@ -6,6 +6,13 @@ text formats (e.g., JSON, XML, YAML, HTML). The goal of this Core library is to
 provide a solid foundation for developing format-specific libraries, and to allow
 interoperation between these libraries for polyglot output.
 
-[JavaDoc](https://scriptorium.codecastle.io/apidocs/scriptorium-core/1.0)
+[JavaDoc](https://scriptorium.codecastle.io/apidocs/scriptorium-core/2.0)
 
-As of version 1.0.2, Java 8 support has been dropped.
+## Change log
+
+### 2.0.0
+
+- Now packaged as a multi-release `jar` with a proper `module-info.class` for Java versions
+above 8.
+- `FluentNode<P>` no longer implements `Closeable`
+- `Inscribable#inscribe(IOFunction)` now returns a new type, `Inscription<P>`

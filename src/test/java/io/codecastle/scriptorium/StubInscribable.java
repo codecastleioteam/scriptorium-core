@@ -16,7 +16,7 @@ import io.codecastle.scriptorium.function.IOFunction;
 public class StubInscribable implements Inscribable {
 
 	@Override
-	public FluentNode inscribe(IOFunction function) throws IOException {
+	public Inscription inscribe(IOFunction function) throws IOException {
 		throw new UnsupportedOperationException("Not implemented");
 	}
 
