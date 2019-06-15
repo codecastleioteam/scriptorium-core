@@ -16,3 +16,7 @@ interoperation between these libraries for polyglot output.
 above 8.
 - `FluentNode<P>` no longer implements `Closeable`
 - `Inscribable#inscribe(IOFunction)` now returns a new type, `Inscription<P>`
+
+### 1.0.1
+Provide an Automatic-Module-Name for forward compatibility 
+with the Java 9+ module system: `io.codecastle.scriptorium.core`
